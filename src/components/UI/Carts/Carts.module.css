@@ -1,0 +1,25 @@
+.carts {
+  margin-top: -80px;
+}
+
+.cart {
+  text-align: center;
+  background-color: #fff;
+  height: 300px;
+  padding: 15px;
+  box-shadow: 10px 10px 40px 20px #0000001a;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  color: #d67e35;
+  margin: 20px 0;
+  font-size: 26px;
+}
+
+.suptitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #656363;
+}

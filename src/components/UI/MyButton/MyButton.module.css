@@ -1,0 +1,9 @@
+.myButton {
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  background-color: #ff7400;
+  border: 0;
+}

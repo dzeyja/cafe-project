@@ -1,0 +1,32 @@
+.main {
+  background-image: url('/public/images/bg.jpg');
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+.introText {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: #d67e35;
+  font-size: 50px;
+  font-weight: 400;
+  text-align: center;
+  left: 0;
+  margin-top: 255px;
+  margin-bottom: 12px;
+}
+
+.suptitle {
+  font-family: 'Playfair Display', serif;
+  color: #d67e35;
+  font-size: 50px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.suptitleWhite {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  font-size: 18px;
+}

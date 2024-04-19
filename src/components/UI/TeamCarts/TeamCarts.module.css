@@ -1,0 +1,28 @@
+.OurTeam {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.TeamCarts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 45px;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+}
+
+.TeamCart {
+  border-radius: 15px;
+  width: 30%;
+}
+
+.image {
+  border-radius: 15px;
+
+  width: 100%;
+}
