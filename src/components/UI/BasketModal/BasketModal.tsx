@@ -15,7 +15,7 @@ const BasketModal: FC<BasketModalProps> = ({ handleClose, show }) => {
         <Card>
           <Card.Img variant="top" src={img} />
           <Card.Body>
-            <Card.Title>Hello world</Card.Title>
+            <Card.Title>Hello world, its my project</Card.Title>
             <Card.Text>My name is Daulet</Card.Text>
             <Button variant="primary">Click here!</Button>
           </Card.Body>
