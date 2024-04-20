@@ -22,7 +22,7 @@ const Products: FC = () => {
   })
 
   useEffect(() => {
-    dispatch(fetchProducts())
+    dispatch(fetchProducts('https://jsonplaceholder.typicode.com/users'))
   }, [])
 
   return (

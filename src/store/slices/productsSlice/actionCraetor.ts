@@ -6,15 +6,17 @@ import {
   productsFetchSuccess,
 } from './productsSlice'
 import { IProducts } from '../../models/reduxTypes'
+import { createAsyncThunk } from '@reduxjs/toolkit'
 
-export const fetchProducts = () => async (dispatch: AppDispatch) => {
-  try {
-    dispatch(productsFetch())
-    const response = await axios.get<IProducts[]>(
-      'https://jsonplaceholder.typicode.com/users'
-    )
-    dispatch(productsFetchSuccess(response.data))
-  } catch (error: any) {
-    dispatch(productsFetchError(error.message))
+export const fetchProducts = createAsyncThunk(
+  'hello',
+  async (url: string, thunkApi) => {
+    try {
+      thunkApi.dispatch(productsFetch())
+      const response = await axios.get<IProducts[]>(url)
+      thunkApi.dispatch(productsFetchSuccess(response.data))
+    } catch (error: any) {
+      thunkApi.dispatch(productsFetchError(error.message))
+    }
   }
-}
+)
