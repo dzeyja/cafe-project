@@ -8,9 +8,7 @@ import BasketModal from '../BasketModal/BasketModal'
 
 const Header: FC = () => {
   const [show, setShow] = useState<boolean>(false)
-
-  const handleOpen = () => setShow(true)
-  const handleClose = () => setShow(false)
+  console.log(show)
 
   return (
     <header className={styles.header}>
@@ -31,13 +29,13 @@ const Header: FC = () => {
               </Nav.Link>
               {/* Иконка корзины */}
               <FaBasketShopping
-                onClick={handleOpen}
+                onClick={() => setShow(true)}
                 className={styles.basket}
               />
             </Nav>
             {/* Filter для поиска */}
             <FilterForm />
-            <BasketModal show={show} handleClose={handleClose} />
+            {show && <BasketModal setShow={setShow} />}
           </Navbar.Collapse>
         </Container>
       </Navbar>

@@ -1,27 +1,52 @@
 import React, { FC } from 'react'
-import { Card, Modal, Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
+import { IoClose } from 'react-icons/io5'
+import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks'
+import { setDeleteOrder } from '../../../store/slices/basketSlice/basketSlice'
+import { Link } from 'react-router-dom'
 import styles from './BasketModal.module.css'
-import img from '../Product/hello.jpg'
 
 interface BasketModalProps {
-  handleClose: () => void
-  show: boolean
+  setShow: (value: boolean) => any
 }
 
-const BasketModal: FC<BasketModalProps> = ({ handleClose, show }) => {
+const BasketModal: FC<BasketModalProps> = ({ setShow }) => {
+  const orders = useAppSelector((state) => state.basketReducer)
+  const dispatch = useAppDispatch()
+
+  const handleDeleteOrder = (id: number) => {
+    dispatch(setDeleteOrder(id))
+  }
+
   return (
-    <Modal className={styles.modal} show={show} onHide={handleClose}>
-      <Modal.Body>
-        <Card>
-          <Card.Img variant="top" src={img} />
-          <Card.Body>
-            <Card.Title>Hello world, its my project</Card.Title>
-            <Card.Text>My name is Daulet</Card.Text>
-            <Button variant="primary">Click here!</Button>
-          </Card.Body>
-        </Card>
-      </Modal.Body>
-    </Modal>
+    <>
+      <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+        {orders.length === 0 ? (
+          <h1 className={styles.basketEmpty}>Корзина пуста</h1>
+        ) : (
+          <div>
+            {orders.map((order) => (
+              <div className={styles.viewModal}>
+                <h3>{order.name}</h3>
+                <div className={styles.actions}>
+                  <strong>2000 KZT</strong>{' '}
+                  <IoClose onClick={() => handleDeleteOrder(order.id)} />
+                </div>
+              </div>
+            ))}
+            <hr />
+            <p>
+              <strong>Итого: 2000 KZT</strong>
+            </p>
+            <Link to="basket">
+              <Button onClick={() => setShow(false)} variant="primary">
+                Оформить заказ
+              </Button>
+            </Link>
+          </div>
+        )}
+      </div>
+    </>
   )
 }
 

@@ -1,3 +1,37 @@
-.modal {
-  margin-top: 80px;
+.modalContent {
+  top: 100px;
+  position: absolute;
+  width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.viewModal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px;
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+.buttonInCart {
+  padding: 3px;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+}
+
+.basketEmpty {
+  text-align: center;
+  color: red;
+  font-weight: 600;
 }
