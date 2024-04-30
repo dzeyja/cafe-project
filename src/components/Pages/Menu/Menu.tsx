@@ -1,8 +1,20 @@
 import { Col, Container, Nav, Row } from 'react-bootstrap'
 import styles from './Menu.module.css'
 import Products from '../../UI/Products/Products'
+import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks'
+import { useEffect } from 'react'
+import { fetchCategories } from '../../../store/slices/categoriesSlice/actionCreator'
 
 const LeftMenu: React.FC = () => {
+  const dispatch = useAppDispatch()
+  const categories = useAppSelector(
+    (state) => state.categoriesReducer.categories
+  )
+
+  useEffect(() => {
+    dispatch(fetchCategories())
+  }, [])
+
   return (
     <div className={styles.menuContainer}>
       <Container>
@@ -10,13 +22,11 @@ const LeftMenu: React.FC = () => {
           {/*Навигация по котегориям*/}
           <Col md={2}>
             <Nav defaultActiveKey="#home" className="flex-column fixed-left">
-              <Nav.Link href="#home">Горячие блюда</Nav.Link>
-              <Nav.Link href="#home">Завтраки</Nav.Link>
-              <Nav.Link href="#about">Дисерты</Nav.Link>
-              <Nav.Link href="#menu">Напитки</Nav.Link>
-              <Nav.Link href="#contact">Коктейли</Nav.Link>
-              <Nav.Link href="#contact">Закуски</Nav.Link>
-              <Nav.Link href="#contact">Пиццы</Nav.Link>
+              {categories.map((category) => (
+                <Nav.Link key={category.id} href="#home">
+                  {category.name}
+                </Nav.Link>
+              ))}
             </Nav>
           </Col>
 

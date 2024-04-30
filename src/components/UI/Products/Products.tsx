@@ -5,8 +5,11 @@ import { IProducts } from '../../../store/models/reduxTypes'
 import Product from '../Product/Product'
 
 const Products: FC = () => {
-  const { products, isLoading, error } = useAppSelector(
+  const { products, isLoading } = useAppSelector(
     (state) => state.productsReducer
+  )
+  const categories = useAppSelector(
+    (state) => state.categoriesReducer.categories
   )
   const { title } = useAppSelector((state) => state.filterReducer)
   const dispatch = useAppDispatch()
@@ -22,7 +25,7 @@ const Products: FC = () => {
   })
 
   useEffect(() => {
-    dispatch(fetchProducts('https://jsonplaceholder.typicode.com/users'))
+    dispatch(fetchProducts('http://localhost:4000/products'))
   }, [])
 
   return (
@@ -30,8 +33,17 @@ const Products: FC = () => {
       {isLoading ? (
         <h1>Идет загрузка...</h1>
       ) : (
-        filteredProducts.map((product: IProducts) => (
-          <Product key={product.id} product={product} />
+        categories.map((category) => (
+          <>
+            <h2>{category.name}</h2>
+            {filteredProducts
+              .filter(
+                (product: IProducts) => product.category === category.name
+              )
+              .map((product) => (
+                <Product product={product} key={product.id} />
+              ))}
+          </>
         ))
       )}
     </>
