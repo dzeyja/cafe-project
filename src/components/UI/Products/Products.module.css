@@ -1,0 +1,12 @@
+.productsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.productsCategory {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 600;
+}

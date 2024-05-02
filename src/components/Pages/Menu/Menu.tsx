@@ -21,17 +21,24 @@ const LeftMenu: React.FC = () => {
         <Row>
           {/*Навигация по котегориям*/}
           <Col md={2}>
-            <Nav defaultActiveKey="#home" className="flex-column fixed-left">
+            <ul className={styles.categoryNav}>
               {categories.map((category) => (
-                <Nav.Link key={category.id} href="#home">
-                  {category.name}
-                </Nav.Link>
+                <li key={category.id}>
+                  <a
+                    href={`#${category.name
+                      .toLowerCase()
+                      .replace(/\s+/g, '-')}`}
+                    key={category.id}
+                  >
+                    {category.name}
+                  </a>
+                </li>
               ))}
-            </Nav>
+            </ul>
           </Col>
 
           {/*Товары*/}
-          <Col className="d-flex flex-wrap gap-3" md={10}>
+          <Col md={10}>
             <Products />
           </Col>
         </Row>

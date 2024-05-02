@@ -2,6 +2,7 @@ import { FC, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks'
 import { fetchProducts } from '../../../store/slices/productsSlice/actionCraetor'
 import { IProducts } from '../../../store/models/reduxTypes'
+import styles from './Products.module.css'
 import Product from '../Product/Product'
 
 const Products: FC = () => {
@@ -34,16 +35,24 @@ const Products: FC = () => {
         <h1>Идет загрузка...</h1>
       ) : (
         categories.map((category) => (
-          <>
-            <h2>{category.name}</h2>
-            {filteredProducts
-              .filter(
-                (product: IProducts) => product.category === category.name
-              )
-              .map((product) => (
-                <Product product={product} key={product.id} />
-              ))}
-          </>
+          <div key={category.id}>
+            <h2
+              id={category.name.toLowerCase().replace(/\s+/g, '-')}
+              className={styles.productsCategory}
+            >
+              {category.name}
+            </h2>
+            {/* Отфильтрованные продукты по категориям */}
+            <div className={styles.productsWrapper}>
+              {filteredProducts
+                .filter(
+                  (product: IProducts) => product.category === category.name
+                )
+                .map((product) => (
+                  <Product product={product} key={product.id} />
+                ))}
+            </div>
+          </div>
         ))
       )}
     </>
