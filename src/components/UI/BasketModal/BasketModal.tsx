@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
-import { Button } from 'react-bootstrap'
 import { IoClose } from 'react-icons/io5'
 import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks'
 import { setDeleteOrder } from '../../../store/slices/basketSlice/basketSlice'
 import { Link } from 'react-router-dom'
 import styles from './BasketModal.module.css'
+import MyButton from '../MyButton/MyButton'
 
 interface BasketModalProps {
   setShow: (value: boolean) => any
@@ -26,7 +26,7 @@ const BasketModal: FC<BasketModalProps> = ({ setShow }) => {
         ) : (
           <div>
             {orders.map((order) => (
-              <div className={styles.viewModal}>
+              <div key={order.id} className={styles.viewModal}>
                 <h3>{order.name}</h3>
                 <div className={styles.actions}>
                   <strong>2000 KZT</strong>{' '}
@@ -39,9 +39,7 @@ const BasketModal: FC<BasketModalProps> = ({ setShow }) => {
               <strong>Итого: 2000 KZT</strong>
             </p>
             <Link to="basket">
-              <Button onClick={() => setShow(false)} variant="primary">
-                Оформить заказ
-              </Button>
+              <MyButton onClick={() => setShow(false)}>Оформить заказ</MyButton>
             </Link>
           </div>
         )}

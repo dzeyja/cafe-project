@@ -1,0 +1,21 @@
+.categoryNav {
+  border-radius: 13px;
+  position: fixed;
+  padding: 20px;
+  height: 83%;
+}
+
+.categoryNav li {
+  margin-bottom: 8px;
+}
+
+.categoryLink {
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.categoryLink:hover {
+  color: #d67e35;
+  text-decoration: underline;
+}

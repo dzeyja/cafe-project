@@ -1,0 +1,51 @@
+.aboutWrapper {
+  margin-top: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 0 auto;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.img {
+  padding: 10px;
+  background-color: #d67e35;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  width: 750px;
+  height: 80%;
+}
+
+.titleInfo {
+  color: #d67e35;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.textContent {
+  display: flex;
+  gap: 20px;
+}
+
+.textContent div {
+  text-align: left;
+  width: 50%;
+}
+
+.leftTextContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.leftTextContent div {
+  width: 40%;
+}

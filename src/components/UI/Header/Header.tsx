@@ -1,31 +1,53 @@
 import { FC, useState } from 'react'
-import { Container, Nav, Navbar, Form, Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Container, Nav, Navbar } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 import { FaBasketShopping } from 'react-icons/fa6'
+import { ROUTES } from '../../../utils/routes'
 import FilterForm from '../FilterForm/FilterForm'
-import styles from './Header.module.css'
 import BasketModal from '../BasketModal/BasketModal'
+
+import styles from './Header.module.css'
 
 const Header: FC = () => {
   const [show, setShow] = useState<boolean>(false)
-  console.log(show)
 
   return (
     <header className={styles.header}>
       <Navbar collapseOnSelect expand="lg" className="py-3">
         <Container>
-          <Navbar.Brand className={styles.logo}>Provence</Navbar.Brand>
+          <Navbar.Brand className={styles.logo}>Ugolok</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link>
-                <Link to=".">Home</Link>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? styles.activeLink : styles.links
+                  }
+                  to={ROUTES.HOME}
+                >
+                  Главная
+                </NavLink>
               </Nav.Link>
               <Nav.Link>
-                <Link to="menu">Menu</Link>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? styles.activeLink : styles.links
+                  }
+                  to={ROUTES.MENU}
+                >
+                  Меню
+                </NavLink>
               </Nav.Link>
               <Nav.Link>
-                <Link to="about">About</Link>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? styles.activeLink : styles.links
+                  }
+                  to={ROUTES.ABOUT}
+                >
+                  О нас
+                </NavLink>
               </Nav.Link>
               {/* Иконка корзины */}
               <FaBasketShopping

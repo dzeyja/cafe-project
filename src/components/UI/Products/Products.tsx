@@ -26,13 +26,15 @@ const Products: FC = () => {
   })
 
   useEffect(() => {
-    dispatch(fetchProducts('http://localhost:4000/products'))
+    dispatch(fetchProducts())
   }, [])
 
   return (
     <>
       {isLoading ? (
         <h1>Идет загрузка...</h1>
+      ) : categories.length === 0 ? (
+        <h1>Ничего не найдено</h1>
       ) : (
         categories.map((category) => (
           <div key={category.id}>
@@ -41,7 +43,7 @@ const Products: FC = () => {
               className={styles.productsCategory}
             >
               {category.name}
-            </h2>
+            </h2>{' '}
             {/* Отфильтрованные продукты по категориям */}
             <div className={styles.productsWrapper}>
               {filteredProducts

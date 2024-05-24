@@ -1,9 +1,11 @@
 import { Col, Container, Nav, Row } from 'react-bootstrap'
-import styles from './Menu.module.css'
-import Products from '../../UI/Products/Products'
 import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks'
 import { useEffect } from 'react'
 import { fetchCategories } from '../../../store/slices/categoriesSlice/actionCreator'
+import Products from '../../UI/Products/Products'
+
+import styles from './Menu.module.css'
+import Categories from '../../UI/Categories/Categories'
 
 const LeftMenu: React.FC = () => {
   const dispatch = useAppDispatch()
@@ -21,20 +23,7 @@ const LeftMenu: React.FC = () => {
         <Row>
           {/*Навигация по котегориям*/}
           <Col md={2}>
-            <ul className={styles.categoryNav}>
-              {categories.map((category) => (
-                <li key={category.id}>
-                  <a
-                    href={`#${category.name
-                      .toLowerCase()
-                      .replace(/\s+/g, '-')}`}
-                    key={category.id}
-                  >
-                    {category.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <Categories categories={categories} />
           </Col>
 
           {/*Товары*/}

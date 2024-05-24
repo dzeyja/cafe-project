@@ -1,13 +1,13 @@
-import { IOrders } from '../../models/reduxTypes'
+import { IOrders, IProducts } from '../../models/reduxTypes'
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-const initialState: IOrders[] = []
+const initialState: IProducts[] = []
 
 const basketSlice = createSlice({
   name: 'basket',
   initialState,
   reducers: {
-    setAddOrder: (state, action: PayloadAction<IOrders>) => {
+    setAddOrder: (state, action: PayloadAction<IProducts>) => {
       state.push(action.payload)
     },
     setDeleteOrder: (state, action: PayloadAction<number>) => {

@@ -1,18 +1,23 @@
 import React, { FC } from 'react'
-import MyButton from '../MyButton/MyButton'
+import { Container } from 'react-bootstrap'
+
 import styles from './Form.module.css'
+import MyButton from '../MyButton/MyButton'
 
 const Form: FC = () => {
   return (
-    <div className="container">
-      <div className="title">Зобронируйте столик на ваш лучший вечер</div>
-
-      <form className={styles.form}>
-        <input placeholder="Имя" type="text" />
-        <input placeholder="Email" type="text" />
-        <input placeholder="Место для брони" type="text" />
-        <MyButton>Click Here!</MyButton>
-      </form>
+    <div className={styles.bg}>
+      <Container>
+        <div className={styles.formWrapper}>
+          <form className={styles.form}>
+            <h2>Забронировать столик</h2>
+            <input placeholder="Имя" type="text" />
+            <input placeholder="Телефон" type="text" />
+            <input placeholder="Время" type="text" />
+            <MyButton>Заказать столик</MyButton>
+          </form>
+        </div>
+      </Container>
     </div>
   )
 }

@@ -7,6 +7,10 @@
 /*font-family: 'Open Sans', sans-serif */
 /* #d67e35 Оранжевый*/
 
+.App {
+  min-height: calc(100vh - 100px);
+}
+
 .title {
   margin-top: 100px;
   margin-bottom: 50px;
@@ -23,16 +27,4 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-}
-
-.daulet {
-  background-color: aqua;
-  width: 30%;
-  height: 300px;
-}
-
-.dauletWrapper {
-  gap: 30px;
-  display: flex;
-  flex-wrap: wrap;
 }

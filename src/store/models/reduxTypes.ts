@@ -3,6 +3,8 @@ export interface IProducts {
   name: string
   description: string
   category: string
+  price: number
+  weight: number
 }
 
 export interface IOrders {

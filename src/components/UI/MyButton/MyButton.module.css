@@ -1,5 +1,6 @@
 .myButton {
-  padding: 14px 28px;
+  border-radius: 7px;
+  padding: 12px 28px;
   font-size: 14px;
   font-weight: 700;
   font-family: 'Open Sans', sans-serif;

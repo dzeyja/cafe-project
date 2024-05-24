@@ -24,3 +24,13 @@
 .basket:hover {
   transform: scale(1.2);
 }
+
+.links {
+  color: #000;
+}
+
+.activeLink {
+  color: #d67e35;
+  font-weight: 600;
+  text-decoration: underline;
+}

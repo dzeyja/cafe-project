@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import { IProducts } from '../../models/reduxTypes'
 import { fetchProducts } from './actionCraetor'
 
@@ -19,15 +19,15 @@ const productsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchProducts.pending, (state, action) => {
+    builder.addCase(fetchProducts.pending, (state) => {
       state.isLoading = true
     })
-    builder.addCase(fetchProducts.fulfilled, (state, action: any) => {
+    builder.addCase(fetchProducts.fulfilled, (state, action) => {
       state.isLoading = false
       state.products = action.payload
     })
-    builder.addCase(fetchProducts.rejected, (state, action: any) => {
-      state.error = action.payload
+    builder.addCase(fetchProducts.rejected, (state) => {
+      state.isLoading = false
     })
   },
 })

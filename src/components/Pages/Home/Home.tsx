@@ -3,8 +3,8 @@ import Carts from '../../UI/Carts/Carts'
 import Intro from '../../UI/Intro/Intro'
 import BlackBlock from '../../UI/BlackBlock/BlackBlock'
 import Slider from '../../UI/Slider/Slider'
-import PopularDishes from '../../UI/PopularDishes/PopularDishes'
 import Form from '../../UI/BookedForm/Form'
+import AboutCafe from '../../UI/AboutCafe/AboutCafe'
 
 const Home: FC = () => {
   return (
@@ -13,7 +13,7 @@ const Home: FC = () => {
       <Carts />
       <Slider />
       <BlackBlock />
-      <PopularDishes />
+      <AboutCafe />
       <Form />
     </>
   )
