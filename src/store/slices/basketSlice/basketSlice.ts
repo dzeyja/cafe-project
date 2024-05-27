@@ -1,4 +1,4 @@
-import { IOrders, IProducts } from '../../models/reduxTypes'
+import { IProducts } from '../../models/reduxTypes'
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 const initialState: IProducts[] = []

@@ -2,8 +2,9 @@ import { FC, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks'
 import { fetchProducts } from '../../../store/slices/productsSlice/actionCraetor'
 import { IProducts } from '../../../store/models/reduxTypes'
-import styles from './Products.module.css'
 import Product from '../Product/Product'
+import Loader from '../Loader/Loader'
+import styles from './Products.module.css'
 
 const Products: FC = () => {
   const { products, isLoading } = useAppSelector(
@@ -32,7 +33,7 @@ const Products: FC = () => {
   return (
     <>
       {isLoading ? (
-        <h1>Идет загрузка...</h1>
+        <Loader />
       ) : categories.length === 0 ? (
         <h1>Ничего не найдено</h1>
       ) : (

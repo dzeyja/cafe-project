@@ -4,7 +4,7 @@ export interface IProducts {
   description: string
   category: string
   price: number
-  weight: number
+  weight?: number
 }
 
 export interface IOrders {

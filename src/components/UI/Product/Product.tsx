@@ -29,7 +29,7 @@ const Product: FC<ProductProps> = ({ product }) => {
       <Card.Img variant="top" src={img} />
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
-        <Card.Text>{product.description}</Card.Text>
+        <Card.Text>{product.price} KZT</Card.Text>
         <Button onClick={handleAddOrder} variant="primary">
           Добавть в корзину
         </Button>

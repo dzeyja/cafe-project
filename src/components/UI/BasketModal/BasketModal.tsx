@@ -18,6 +18,8 @@ const BasketModal: FC<BasketModalProps> = ({ setShow }) => {
     dispatch(setDeleteOrder(id))
   }
 
+  const totalPrice = orders.reduce((sum, order) => sum + order.price, 0)
+
   return (
     <>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
@@ -29,14 +31,14 @@ const BasketModal: FC<BasketModalProps> = ({ setShow }) => {
               <div key={order.id} className={styles.viewModal}>
                 <h3>{order.name}</h3>
                 <div className={styles.actions}>
-                  <strong>2000 KZT</strong>{' '}
+                  <strong>{order.price} KZT</strong>{' '}
                   <IoClose onClick={() => handleDeleteOrder(order.id)} />
                 </div>
               </div>
             ))}
             <hr />
             <p>
-              <strong>Итого: 2000 KZT</strong>
+              <strong>Итого: {totalPrice} KZT</strong>
             </p>
             <Link to="basket">
               <MyButton onClick={() => setShow(false)}>Оформить заказ</MyButton>

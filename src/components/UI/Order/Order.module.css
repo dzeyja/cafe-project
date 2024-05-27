@@ -1,0 +1,47 @@
+.basket {
+  margin-top: 100px;
+}
+
+.title {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.totalPrice {
+  font-weight: 600;
+  text-align: right;
+}
+
+.order {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.orderLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.orderLeft img {
+  border-radius: 7px;
+  width: 30%;
+}
+
+.orderTitle {
+  float: right;
+}
+
+.orderRight {
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
