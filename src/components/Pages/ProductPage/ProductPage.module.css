@@ -25,5 +25,10 @@
 .maketBg {
   width: 50%;
   height: 300px;
-  background-color: aqua;
+}
+
+.maketBg img {
+  box-shadow: 1px 1px 53px 3px rgba(0, 0, 0, 0.09);
+  border-radius: 12px;
+  width: 100%;
 }

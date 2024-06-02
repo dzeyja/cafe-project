@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { ROUTES } from '../../utils/routes'
 import MainLayout from '../layouts/MainLayout'
 import Home from '../Pages/Home/Home'
 import Menu from '../Pages/Menu/Menu'
 import About from '../Pages/About Us/About'
 import Basket from '../Pages/Basket/Basket'
-import { ROUTES } from '../../utils/routes'
 import ProductPage from '../Pages/ProductPage/ProductPage'
 
 const AppRoutes: FC = () => {

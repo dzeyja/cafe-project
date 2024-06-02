@@ -2,8 +2,8 @@ import { FC } from 'react'
 import { Container } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks'
-import MyButton from '../../UI/MyButton/MyButton'
 import { setAddOrder } from '../../../store/slices/basketSlice/basketSlice'
+import MyButton from '../../UI/MyButton/MyButton'
 
 import styles from './ProductPage.module.css'
 
@@ -25,7 +25,9 @@ const ProductPage: FC = () => {
   return (
     <Container>
       <div className={styles.productWrapper}>
-        <div className={styles.maketBg}></div>
+        <div className={styles.maketBg}>
+          <img src={product?.img} alt={product?.name} />
+        </div>
         <div className={styles.textContent}>
           <div className={styles.prodName}>{product?.name}</div>
           <hr />

@@ -5,6 +5,7 @@ export interface IProducts {
   category: string
   price: number
   weight?: number
+  img?: string
 }
 
 export interface IOrders {

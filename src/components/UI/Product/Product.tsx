@@ -1,5 +1,5 @@
 import { Button, Card } from 'react-bootstrap'
-import { FC } from 'react'
+import { FC, MouseEvent } from 'react'
 import { IProducts } from '../../../store/models/reduxTypes'
 import { useAppDispatch } from '../../../hooks/reduxHooks'
 import { setAddOrder } from '../../../store/slices/basketSlice/basketSlice'
@@ -17,7 +17,9 @@ const Product: FC<ProductProps> = ({ product }) => {
 
   const router = useNavigate()
 
-  const handleAddOrder = () => {
+  const handleAddOrder = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
     dispatch(setAddOrder(product))
   }
 
@@ -26,7 +28,12 @@ const Product: FC<ProductProps> = ({ product }) => {
       onClick={() => router(`/products/${product.id}`)}
       className={styles.card}
     >
-      <Card.Img variant="top" src={img} />
+      <Card.Img
+        variant="top"
+        className={styles.img}
+        src={product.img}
+        alt={product.name}
+      />
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
         <Card.Text>{product.price} KZT</Card.Text>
