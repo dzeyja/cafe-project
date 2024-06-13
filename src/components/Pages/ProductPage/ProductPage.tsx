@@ -25,9 +25,7 @@ const ProductPage: FC = () => {
   return (
     <Container>
       <div className={styles.productWrapper}>
-        <div className={styles.maketBg}>
-          <img src={product?.img} alt={product?.name} />
-        </div>
+        <img src={product?.img} alt={product?.name} />
         <div className={styles.textContent}>
           <div className={styles.prodName}>{product?.name}</div>
           <hr />

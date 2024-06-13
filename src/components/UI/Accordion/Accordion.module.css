@@ -1,0 +1,10 @@
+.accordion {
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.46);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 40px;
+  font-weight: 600;
+}

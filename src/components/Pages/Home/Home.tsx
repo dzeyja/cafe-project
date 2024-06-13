@@ -5,6 +5,7 @@ import BlackBlock from '../../UI/BlackBlock/BlackBlock'
 import Slider from '../../UI/Slider/Slider'
 import Form from '../../UI/BookedForm/Form'
 import AboutCafe from '../../UI/AboutCafe/AboutCafe'
+import AccordionItems from '../../UI/Accordion/Accordion'
 
 const Home: FC = () => {
   return (
@@ -14,6 +15,7 @@ const Home: FC = () => {
       <Slider />
       <BlackBlock />
       <AboutCafe />
+      <AccordionItems />
       <Form />
     </>
   )
