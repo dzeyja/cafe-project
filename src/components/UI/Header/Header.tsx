@@ -46,7 +46,7 @@ const Header: FC = () => {
                   }
                   to={ROUTES.ABOUT}
                 >
-                  О нас
+                  Контакты
                 </NavLink>
               </Nav.Link>
               {/* Иконка корзины */}

@@ -4,7 +4,6 @@ import { IProducts } from '../../../store/models/reduxTypes'
 import { useAppDispatch } from '../../../hooks/reduxHooks'
 import { setAddOrder } from '../../../store/slices/basketSlice/basketSlice'
 import { useNavigate } from 'react-router-dom'
-import img from './hello.jpg'
 
 import styles from './Products.module.css'
 

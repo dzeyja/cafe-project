@@ -9,3 +9,9 @@
 .description {
   font-size: 13px;
 }
+
+@media (max-width: 760px) {
+  .card {
+    width: 45%;
+  }
+}

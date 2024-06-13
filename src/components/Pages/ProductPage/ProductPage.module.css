@@ -5,6 +5,12 @@
   gap: 40px;
 }
 
+.productWrapper img {
+  border-radius: 12px;
+  width: 500px;
+  height: 350px;
+}
+
 .prodName {
   font-size: 32px;
   font-weight: 700;
@@ -22,13 +28,13 @@
   color: #999;
 }
 
-.maketBg {
-  width: 50%;
-  height: 300px;
-}
-
-.maketBg img {
-  box-shadow: 1px 1px 53px 3px rgba(0, 0, 0, 0.09);
-  border-radius: 12px;
-  width: 100%;
+@media (max-width: 760px) {
+  .maketBg {
+    width: 100%;
+  }
+  .productWrapper {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 }

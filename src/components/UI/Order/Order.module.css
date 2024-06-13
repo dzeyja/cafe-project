@@ -33,7 +33,8 @@
 
 .orderLeft img {
   border-radius: 7px;
-  width: 30%;
+  width: 200px;
+  height: 130px;
 }
 
 .orderTitle {
