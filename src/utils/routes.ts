@@ -4,4 +4,6 @@ export enum ROUTES {
   ABOUT = 'contacts',
   BASKET = 'basket',
   PRODUCT = 'products/:id',
+  REGISTER = '/register',
+  LOGIN = '/login',
 }

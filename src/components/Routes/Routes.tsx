@@ -7,6 +7,8 @@ import Menu from '../Pages/Menu/Menu'
 import About from '../Pages/About Us/About'
 import Basket from '../Pages/Basket/Basket'
 import ProductPage from '../Pages/ProductPage/ProductPage'
+import SignUpPage from '../Pages/SignUpPage/SignUpPage'
+import LoginPage from '../Pages/LoginPage/LoginPage'
 
 const AppRoutes: FC = () => {
   return (
@@ -17,6 +19,8 @@ const AppRoutes: FC = () => {
         <Route path={ROUTES.ABOUT} element={<About />} />
         <Route path={ROUTES.BASKET} element={<Basket />} />
         <Route path={ROUTES.PRODUCT} element={<ProductPage />} />
+        <Route path={ROUTES.REGISTER} element={<SignUpPage />} />
+        <Route path={ROUTES.LOGIN} element={<LoginPage />} />
       </Route>
     </Routes>
   )

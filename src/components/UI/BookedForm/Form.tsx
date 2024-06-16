@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import { Container } from 'react-bootstrap'
+import MyButton from '../MyButton/MyButton'
 
 import styles from './Form.module.css'
-import MyButton from '../MyButton/MyButton'
 
 const Form: FC = () => {
   return (

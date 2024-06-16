@@ -1,8 +1,9 @@
 import ReactDOM from 'react-dom/client'
-import App from './App'
-import './generalStyles/index.css'
 import { Provider } from 'react-redux'
 import { setupStore } from './store'
+import App from './App'
+import './generalStyles/index.css'
+import './utils/firebase'
 
 const store = setupStore()
 

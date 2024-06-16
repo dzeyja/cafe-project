@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { FaBasketShopping } from 'react-icons/fa6'
 import { ROUTES } from '../../../utils/routes'
 import FilterForm from '../FilterForm/FilterForm'
@@ -55,6 +55,10 @@ const Header: FC = () => {
                 className={styles.basket}
               />
             </Nav>
+            <p>
+              <Link to={ROUTES.REGISTER}>Зарегестрироватся</Link> или{' '}
+              <Link to={ROUTES.LOGIN}>войти</Link>
+            </p>
             {/* Filter для поиска */}
             <FilterForm />
             {show && <BasketModal setShow={setShow} />}

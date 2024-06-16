@@ -4,6 +4,7 @@ import filterReducer from './slices/filterSlice/filterSlice'
 import basketReducer from './slices/basketSlice/basketSlice'
 import categoriesReducer from './slices/categoriesSlice/categoriesSlice'
 import errorReducer from './slices/errorSlice/errorSlice'
+import userReducer from './slices/userSlice/userSlice'
 
 const rootState = combineReducers({
   productsReducer,
@@ -11,6 +12,7 @@ const rootState = combineReducers({
   basketReducer,
   categoriesReducer,
   errorReducer,
+  userReducer,
 })
 
 export const setupStore = () => {
