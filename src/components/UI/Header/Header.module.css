@@ -8,17 +8,23 @@
   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.39);
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: 600;
-}
-
 .basket {
   margin-left: 10px;
   font-size: 18px;
   cursor: pointer;
 
   transition: transform 0.2s linear;
+}
+
+.activeLink {
+  color: #d67e35;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .basket:hover {
@@ -29,8 +35,7 @@
   color: #000;
 }
 
-.activeLink {
-  color: #d67e35;
-  font-weight: 600;
-  text-decoration: underline;
+.auth {
+  margin: auto 0;
+  margin-right: 20px;
 }

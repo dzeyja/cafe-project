@@ -6,6 +6,10 @@ import { setAddOrder } from '../../../store/slices/basketSlice/basketSlice'
 import MyButton from '../../UI/MyButton/MyButton'
 
 import styles from './ProductPage.module.css'
+import {
+  decrementCount,
+  incrementCount,
+} from '../../../store/slices/productsSlice/productsSlice'
 
 const ProductPage: FC = () => {
   const { id } = useParams<{ id: string }>()
@@ -22,6 +26,14 @@ const ProductPage: FC = () => {
     }
   }
 
+  const incrementClick = (id: number) => {
+    dispatch(incrementCount(id))
+  }
+
+  const decrementClick = (id: number) => {
+    dispatch(decrementCount(id))
+  }
+
   return (
     <Container>
       <div className={styles.productWrapper}>
@@ -33,7 +45,24 @@ const ProductPage: FC = () => {
           <div className={styles.price}>
             {product?.price} KZT <span>/ 400 грамм</span>
           </div>
-          <div>Количество порций:</div>
+          <div>
+            Количество порций:
+            <div className={styles.counter}>
+              <button
+                onClick={() => incrementClick(product!.id)}
+                className={styles.incrementBtn}
+              >
+                +
+              </button>
+              <p className={styles.count}>{product?.count}</p>
+              <button
+                onClick={() => decrementClick(product!.id)}
+                className={styles.decrementBtn}
+              >
+                -
+              </button>
+            </div>
+          </div>
           <MyButton onClick={handleAddOrder}>Добавить в корзину</MyButton>
         </div>
       </div>

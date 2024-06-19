@@ -12,7 +12,7 @@ const FilterForm: FC = () => {
   }
 
   return (
-    <Form className="d-flex">
+    <Form>
       <Form.Control
         value={title}
         onChange={handleChange}

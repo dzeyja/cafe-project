@@ -2,3 +2,9 @@
   margin: 220px 0 200px 0;
   text-align: center;
 }
+
+.signUpWrapper h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}

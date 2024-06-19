@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { IProducts } from '../../models/reduxTypes'
 import { fetchProducts } from './actionCraetor'
 
@@ -17,7 +17,22 @@ const initialState: ProductsState = {
 const productsSlice = createSlice({
   name: 'products',
   initialState,
-  reducers: {},
+  reducers: {
+    incrementCount: (state, action: PayloadAction<number>) => {
+      const product = state.products.find((p) => p.id === action.payload)
+      if (product && typeof product.count === 'number') {
+        product.count += 1
+      }
+    },
+    decrementCount: (state, action: PayloadAction<number>) => {
+      const product = state.products.find((p) => p.id === action.payload)
+      if (product && typeof product.count === 'number') {
+        if (product.count > 0) {
+          product.count -= 1
+        }
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.pending, (state) => {
       state.isLoading = true
@@ -33,3 +48,4 @@ const productsSlice = createSlice({
 })
 
 export default productsSlice.reducer
+export const { incrementCount, decrementCount } = productsSlice.actions

@@ -12,13 +12,23 @@ interface BasketModalProps {
 
 const BasketModal: FC<BasketModalProps> = ({ setShow }) => {
   const orders = useAppSelector((state) => state.basketReducer)
+  const counter = orders.reduce((count, order) => count + order.count, 0)
   const dispatch = useAppDispatch()
 
   const handleDeleteOrder = (id: number) => {
     dispatch(setDeleteOrder(id))
   }
 
-  const totalPrice = orders.reduce((sum, order) => sum + order.price, 0)
+  let totalPrice
+
+  if (counter > 0) {
+    totalPrice = orders.reduce(
+      (sum, order) => sum + order.price * order.count,
+      0
+    )
+  } else {
+    totalPrice = orders.reduce((sum, order) => sum + order.price, 0)
+  }
 
   return (
     <>

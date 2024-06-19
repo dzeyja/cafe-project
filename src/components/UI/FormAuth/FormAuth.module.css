@@ -5,7 +5,18 @@
 }
 
 .form input {
-  border: 2px solid;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid;
   width: 100%;
   margin-bottom: 10px;
+}
+
+.form button {
+  padding: 5px 15px;
+  background-color: #d67e35;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 7px;
+  margin-bottom: 15px;
 }

@@ -28,6 +28,32 @@
   color: #999;
 }
 
+.counter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.count {
+  margin: auto 0;
+}
+
+.incrementBtn {
+  margin: 0 5px;
+  padding: 3px 8px;
+  background-color: orange;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.decrementBtn {
+  margin: 0 5px;
+  padding: 3px 10px;
+  background-color: orange;
+  color: #fff;
+  border-radius: 4px;
+}
+
 @media (max-width: 760px) {
   .maketBg {
     width: 100%;

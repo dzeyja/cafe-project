@@ -7,9 +7,11 @@ import FilterForm from '../FilterForm/FilterForm'
 import BasketModal from '../BasketModal/BasketModal'
 
 import styles from './Header.module.css'
+import { useAppSelector } from '../../../hooks/reduxHooks'
 
 const Header: FC = () => {
   const [show, setShow] = useState<boolean>(false)
+  const email = useAppSelector((state) => state.userReducer.email)
 
   return (
     <header className={styles.header}>
@@ -55,9 +57,15 @@ const Header: FC = () => {
                 className={styles.basket}
               />
             </Nav>
-            <p>
-              <Link to={ROUTES.REGISTER}>Зарегестрироватся</Link> или{' '}
-              <Link to={ROUTES.LOGIN}>войти</Link>
+            <p className={styles.auth}>
+              {email ? (
+                <Link to={ROUTES.USERPAGE}>{email}</Link>
+              ) : (
+                <>
+                  <Link to={ROUTES.REGISTER}>Зарегестрироватся</Link> или{' '}
+                  <Link to={ROUTES.LOGIN}>войти</Link>
+                </>
+              )}
             </p>
             {/* Filter для поиска */}
             <FilterForm />

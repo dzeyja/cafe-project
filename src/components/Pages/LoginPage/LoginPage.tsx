@@ -13,7 +13,8 @@ const LoginPage: FC = () => {
         <h1>Войдите</h1>
         <Login />
         <p>
-          Или <Link to={ROUTES.REGISTER}>зарегесрируйтесь</Link>
+          Если нету аккаунта то{' '}
+          <Link to={ROUTES.REGISTER}>зарегисрируйтесь</Link>
         </p>
       </div>
     </Container>

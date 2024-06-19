@@ -46,3 +46,28 @@
   gap: 10px;
   display: flex;
 }
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.count {
+  margin: auto 0;
+}
+
+.incrementBtn {
+  margin: 0 5px;
+  border-radius: 4px;
+  background-color: orange;
+  padding: 3px 8px;
+}
+
+.decrementBtn {
+  margin: 0 5px;
+  background-color: orange;
+  border-radius: 4px;
+  padding: 3px 10px;
+}
